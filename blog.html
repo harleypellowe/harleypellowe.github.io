@@ -1,0 +1,51 @@
+---
+title: Blog
+---
+<div class="container has-text-centered">
+  <h1 class="title">Latest Posts</h1>
+</div>
+
+<hr>
+
+<div class="tile is-ancestor">
+  <div class="tile is-vertical is-parent">
+
+  {% for post in site.posts %}
+  <div class="tile card is-child">
+
+    <!-- Title -->
+<!--    <header class="card-header">-->
+<!--    </header>-->
+
+    <div class="card-content">
+      <div class="columns">
+        <!-- Excerpt -->
+        <div class="column is-half">
+          <h1 class="title">
+            {{ post.title }}
+          </h1>
+          <p>{{ post.excerpt }}</p>
+        </div>
+
+        <!-- Image -->
+        <div class="column">
+          <figure class="image">
+            <img src="{{ post.top_image }}" alt="An image.">
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="card-footer">
+      <p class="card-footer-item"></p>
+      <a href="{{ post.url }}" class="card-footer-item has-background-info has-text-white">
+        Continue reading
+      </a>
+    </footer>
+
+  </div>
+  {% endfor %}
+
+  </div>
+</div>
