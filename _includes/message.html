@@ -1,0 +1,10 @@
+<article class="message {{ include.type }}">
+  {% if include.title %}
+  <div class="message-header">
+    <p>Color palette</p>
+  </div>
+  {% endif %}
+  <div class="message-body" >
+    {{ include.content }}
+  </div>
+</article>

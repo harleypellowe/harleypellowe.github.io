@@ -1,3 +1,20 @@
-.current {
-  color: green;
+.blog-body {
+  background-color: #f8f8f8;
+
+  hr {
+    border-top: 3px dotted #bbbbbb;
+  }
+}
+
+.sidebar-left, .sidebar-right {
+  height: inherit;
+}
+
+.blog {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.message {
+  margin-top: 1.5em;
 }

@@ -1,0 +1,13 @@
+<div class="box">
+  <figure class="image">
+    <img
+        src="{{ include.src }}"
+        {% if include.caption %}
+        alt="{{ include.caption }}"
+        {% endif %}
+    >
+    {% if include.caption %}
+    <figcaption>{{ include.caption }}</figcaption>
+    {% endif %}
+  </figure>
+</div>
