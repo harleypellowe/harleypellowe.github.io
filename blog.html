@@ -18,14 +18,11 @@ title: Blog
       <h3 class="subtitle">{{ post.subtitle }}</h3>
       <p>{{ post.excerpt }}</p>
       <br>
-      <a href="{{ post.url }}"
-         class="button is-success is-fullwidth blog-font is-size-4">
-        <span>Continue reading</span>
-        <span style="width: 10px;"></span>
-        <span class="icon">
-          <i class="fas fa-long-arrow-alt-right"></i>
-        </span>
-      </a>
+      {% capture url %}
+        {{ post.url }}
+      {% endcapture %}
+
+      {% include continue.html url=url %}
     </div>
 
   </div>
