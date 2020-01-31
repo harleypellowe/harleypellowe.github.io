@@ -1,37 +1,24 @@
 ---
 layout: default
 ---
-<div class="section blog has-background-dark">
-  <div class="container has-text-centered has-text-light">
-    <h1 class="title has-text-light">{{ page.title }}</h1>
+<div class="blog">
+
+  <div class="container has-background-dark has-text-centered has-text-light">
+    <br>
+    <h1 class="title is-1 has-text-light">{{ page.title }}</h1>
     {% if page.subtitle %}
     <h3 class="subtitle has-text-light">{{ page.subtitle }}</h3>
     {% endif %}
     <br>
   </div>
 
-  <div class="columns">
-    <!-- LEFT SIDEBAR -->
-    <div class="column is-2 has-background-light-yellow sidebar-left"></div>
-    <div class="column is-1 has-background-light"></div>
+  <br>
 
-    <!-- BLOG BODY-->
-    <div class="column is-6 has-background-light blog-body">
-      <p>
-      {{ page.date | date_to_string }}
-      {% assign author = site.authors | where: 'short_name', page.author | first %}
-      {% if author %}
-       - <a href="{{ author.url }}">{{ author.name }}</a>
-      {% endif %}
-      </p>
-      <br><br>
-      <div class="content">
-      {{ content }}
-      </div>
-    </div>
-
-    <!-- RIGHT SIDEBAR -->
-    <div class="column is-1 has-background-light"></div>
-    <div class="column is-2 has-background-light-yellow sidebar-right"></div>
+  <div class="content">
+  {{ content }}
   </div>
+
+  <br>
+
+  {% include comments.html %}
 </div>

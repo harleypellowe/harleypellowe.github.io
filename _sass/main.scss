@@ -1,14 +1,56 @@
 @charset "utf-8";
 
 $light-yellow: hsl(48, 100%, 78%);
+$light-blue: hsl(186, 23%, 74%);
+$info: $light-blue;
 
 @import "../mybulma/bulma-0.8.0/bulma.sass";
+@import "monokai";
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: $size-5;
+}
+
+h1 {
+  font-family: 'Permanent Marker', cursive;
+}
+
+ol {
+  counter-reset: my-counter;
+}
+
+ol > li {
+  counter-increment: my-counter;
+  list-style-type: none;
+}
+
+ol > li::before {
+  content: counter(my-counter) ". ";
+  font-family: 'Permanent Marker', cursive;
+  font-size: $size-4;
+}
+
+.blog-font {
+  font-family: 'Permanent Marker', cursive;
+  color: $text-strong;
+}
 
 .blog-body {
   background-color: #f8f8f8;
 
   hr {
     border-top: 3px dotted #bbbbbb;
+  }
+}
+
+.hero {
+  .blog-title {
+    font-size: 95px;
+    transform: rotate(-2deg);
+  }
+  a:visited {
+    color: $text-strong;
   }
 }
 
@@ -23,8 +65,17 @@ $light-yellow: hsl(48, 100%, 78%);
 .blog {
   padding-left: 0;
   padding-right: 0;
+  .content {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
 }
 
 .message {
   margin-top: 1.5em;
+  box-shadow: $box-shadow;
+}
+
+#main > .column {
+  z-index: 999;
 }

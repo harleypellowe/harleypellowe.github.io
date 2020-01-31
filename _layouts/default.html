@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }}</title>
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link
+      href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/styles.css">
   {% feed_meta %}
   {% seo %}
@@ -12,7 +15,18 @@
 <body>
 {% include header.html %}
 
-{{ content }}
+<div id="main" class="columns">
+  <!-- LEFT SIDEBAR -->
+  <div class="column is-3 has-background-light-yellow sidebar-left"></div>
+
+  <!-- BLOG BODY-->
+  <div class="column is-6 has-background-light blog-body">
+    {{ content }}
+  </div>
+
+  <!-- RIGHT SIDEBAR -->
+  <div class="column is-3 has-background-light-yellow sidebar-right"></div>
+</div>
 
 {% include footer.html %}
 </body>
