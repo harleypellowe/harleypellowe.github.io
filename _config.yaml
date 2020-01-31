@@ -4,6 +4,11 @@ collections:
   authors:
     output: true
 
+encoding: UTF-8
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
+
 defaults:
   - scope:
       path: ""
