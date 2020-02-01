@@ -10,12 +10,11 @@ title: Blog
 
 <div class="tile is-ancestor">
   <div class="tile is-vertical is-parent">
-
-  {% for post in site.posts %}
+  {% assign filtered_posts = site.posts | where: 'start_here', true %}
+  {% for post in filtered_posts %}
   <div class="tile is-child">
     <div class="box">
       <h1 class="title">{{ post.title }}</h1>
-      <h3 class="subtitle">{{ post.subtitle }}</h3>
       <p>{{ post.excerpt }}</p>
       <br>
       {% capture url %}
