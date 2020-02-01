@@ -1,29 +1,40 @@
 ---
-title: Blog
+title: Projects
 ---
 <div class="container has-text-centered">
   <br>
-  <h1 class="title">Latest Posts</h1>
+  <h1 class="title">Latest Projects</h1>
 </div>
 
 <hr>
 
-<div class="tile is-ancestor">
+<div id="project-list" class="tile is-ancestor">
   <div class="tile is-vertical is-parent">
   {% assign filtered_posts = site.posts | where: 'start_here', true %}
   {% for post in filtered_posts %}
-  <div class="tile is-child">
-    <div class="box">
-      <h1 class="title">{{ post.title }}</h1>
-      <p>{{ post.excerpt }}</p>
-      <br>
-      {% capture url %}
-        {{ post.url }}
-      {% endcapture %}
+  <div class="tile is-vertical box">
 
-      {% include continue.html url=url %}
+    <div class="tile">
+      <div class="tile is-parent is-8">
+        <div class="tile is-child">
+          <h1 class="title">{{ post.title }}</h1>
+          <p>{{ post.description }}</p>
+          <br>
+        </div>
+      </div>
+
+      <div class="tile is-parent">
+        <div class="tile is-child">
+          <img src="{{ post.top_image }}" style="max-height: 200px;max-width:
+           auto;">
+        </div>
+      </div>
     </div>
 
+    {% capture url %}
+      {{ post.url }}
+    {% endcapture %}
+    {% include continue.html url=url %}
   </div>
   {% endfor %}
 
