@@ -7,6 +7,10 @@ $info: $light-blue;
 @import "../mybulma/bulma-0.8.0/bulma.sass";
 @import "./monokai";
 
+.add-margin-top {
+  margin-top: 1em;
+}
+
 #scrollToTopBtn {
   display: none;
   position: fixed;
