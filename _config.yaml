@@ -13,11 +13,6 @@ kramdown:
 defaults:
   - scope:
       path: ""
-      type: "authors"
-    values:
-      layout: "author"
-  - scope:
-      path: ""
       type: "posts"
     values:
       layout: "post"
