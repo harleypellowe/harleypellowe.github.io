@@ -26,18 +26,18 @@ $info: $light-blue;
   border-radius: 10px;
   font-size: 18px;
 
-  :hover {
+  &:hover {
     background-color: #555;
   }
 }
 
 #blog-content {
-  p:not(:last-child) {
+  & p:not(:last-child) {
     margin-bottom: 0;
     margin-top: 1em;
   }
 
-  #continue-btn {
+  & #continue-btn {
     margin-top: 1em;
   }
 }
@@ -48,21 +48,21 @@ $info: $light-blue;
   margin-top: 2em;
   margin-bottom: 1em;
 
-  .header {
+  & .header {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px 10px 0 0 ;
 
-    .column {
+    & .column {
       padding-bottom: 0;
       padding-top: 0;
     }
   }
 
-  button {
+  & button {
     background-color: rgba(0, 0, 0, 0.0);
   }
 
-  figure.highlight {
+  & figure.highlight {
     margin-top: 12px;
   }
 }
@@ -78,17 +78,32 @@ h1 {
 
 ol {
   counter-reset: my-counter;
+
+  &>li {
+    counter-increment: my-counter;
+    list-style-type: none;
+
+    &::before {
+      content: counter(my-counter) ". ";
+      font-family: 'Permanent Marker', cursive;
+      font-size: $size-4;
+    }
+  }
 }
 
-ol > li {
-  counter-increment: my-counter;
-  list-style-type: none;
-}
+.blog-body ul {
+  margin-left: 2em;
+  &>li {
+    list-style-type: none;
 
-ol > li::before {
-  content: counter(my-counter) ". ";
-  font-family: 'Permanent Marker', cursive;
-  font-size: $size-4;
+    &::before {
+      content: "* ";
+      font-family: 'Permanent Marker', cursive;
+      font-size: $size-4;
+      position: relative;
+      top: 0.2em;
+    }
+  }
 }
 
 .blog-font {
@@ -99,17 +114,17 @@ ol > li::before {
 .blog-body {
   background-color: #f8f8f8;
 
-  hr {
+  & hr {
     border-top: 3px dotted #bbbbbb;
   }
 }
 
 .hero {
-  .blog-title {
+  & .blog-title {
     font-size: 95px;
     transform: rotate(-2deg);
   }
-  a:visited {
+  & a:visited {
     color: $text-strong;
   }
 }
@@ -125,7 +140,7 @@ ol > li::before {
 .blog {
   padding-left: 0;
   padding-right: 0;
-  .content {
+  & .content {
     padding-left: 80px;
     padding-right: 80px;
   }
