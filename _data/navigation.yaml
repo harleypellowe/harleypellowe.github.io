@@ -2,5 +2,9 @@
   link: /
 - name: Projects
   link: /projects.html
+- name: Blog
+  link: /blog.html
+- name: Get involved
+  link: /get-involved.html
 - name: About
   link: /about.html

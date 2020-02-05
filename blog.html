@@ -1,0 +1,41 @@
+---
+title: Blog
+---
+<div class="container has-text-centered">
+  <br>
+  <h1 class="title">Latest Posts</h1>
+</div>
+
+<hr>
+
+<div id="post-list" class="tile is-ancestor">
+  <div class="tile is-vertical is-parent">
+  {% for post in site.categories.blog %}
+    <div class="tile is-vertical box">
+
+      <div class="tile">
+        <div class="tile is-parent is-8">
+          <div class="tile is-child">
+            <h1 class="title">{{ post.title }}</h1>
+            <p>{{ post.description }}</p>
+            <br>
+          </div>
+        </div>
+
+        <div class="tile is-parent">
+          <div class="tile is-child">
+            <img src="{{ post.top_image }}" style="max-height: 200px;max-width:
+             auto;">
+          </div>
+        </div>
+      </div>
+
+      {% capture url %}
+        {{ post.url }}
+      {% endcapture %}
+      {% include continue.html url=url %}
+    </div>
+  {% endfor %}
+
+  </div>
+</div>
