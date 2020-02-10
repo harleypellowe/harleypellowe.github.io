@@ -132,6 +132,7 @@ ol {
   & a:not(#continue-btn) {
     @include has-underline;
     color: $text;
+    text-decoration: none;
   }
 }
 
